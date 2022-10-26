@@ -74,7 +74,7 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <div className="dropdown dropdown-end sm:hidden">
+          <div className="dropdown dropdown-end sm:hidden ">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="text-cyan-800">
                 <FaList></FaList>
@@ -82,7 +82,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+              className="mt-3 p-2 shadow bg-black text-white menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
             >
               <li className="mx-2">
                 <NavLink to={"/home"}>Home</NavLink>
@@ -110,6 +110,17 @@ const Navbar = () => {
                    </>
                 }
               </>
+
+              <Link to={"/profile"}>
+
+                {
+                  user?.photoURL ? 
+                  <img className=" h-8 mr-10 mt-3 rounded-full" src={user?.photoURL} alt="" 
+                  />
+                  :
+                  <FaUser className="mr-10 mt-3" />
+                }
+                </Link>
               
 
             </ul>

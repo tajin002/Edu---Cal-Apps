@@ -11,13 +11,13 @@ const Courses = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-5">
-      <div >
+    <div className="grid grid-cols-1 md:grid-cols-5 ">
+      <div className="grid grid-cols-1">
         <LeftSide items={items} />
       </div>
 
       <div className="col-span-4">
-        <div className="grid grid-cols-3 gap-10 mt-24 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-24 mb-24">
           {items?.map((item) => (
             <Detail item={item}></Detail>
           ))}

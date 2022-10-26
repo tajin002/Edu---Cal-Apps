@@ -10,9 +10,14 @@ const AuthProvider = ({ children }) => {
     console.log(user);
     const [loading, setLoading] = useState(true);
 
-    const providerLogin = (provider) => {
+    const googleProviderLogin = (provider) => {
         setLoading(true);
         return signInWithPopup(auth, provider);
+    }
+
+    const gitProviderLogin = (provider) =>{
+        setLoading(true);
+        return signInWithPopup(auth , provider)
     }
 
     const createUser = (email, password) => {
@@ -59,7 +64,8 @@ const AuthProvider = ({ children }) => {
         user, 
         loading, 
         setLoading,
-        providerLogin, 
+        googleProviderLogin,
+        gitProviderLogin, 
         logOut, 
         updateUserProfile,
         verifyEmail,
