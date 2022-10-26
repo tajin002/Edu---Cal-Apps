@@ -8,6 +8,9 @@ import Login from "../Page/Login/Login";
 import Register from "../Page/Register/Register";
 import CheclOut from "../Page/CheckOut/CheckOut";
 import CheckOut from "../Page/CheckOut/CheckOut";
+import Faq from "../Page/Faq/Faq";
+import PrivateRoute from "../Page/PrivateRouter/PrivateRouter";
+import Profile from "../Page/Profile/Profile";
 
 export const router = createBrowserRouter([
     {
@@ -38,8 +41,13 @@ export const router = createBrowserRouter([
 
             {
                 path : '/checkOut/:id',
-                element : <CheckOut />,
+                element : <PrivateRoute><CheckOut /></PrivateRoute>,
                 loader : ({params})=>fetch(`https://authentication-with-firebase-server-assignment.vercel.app/data/${params.id}`)
+            },
+
+            {
+                path : '/profile',
+                element : <Profile/>
             },
             
             {
@@ -56,6 +64,10 @@ export const router = createBrowserRouter([
             {
                 path : 'blog',
                 element : <Blog />
+            },
+            {
+                path : 'faq',
+                element : <Faq/>
             }
         ]
     }

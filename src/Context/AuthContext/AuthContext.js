@@ -7,6 +7,7 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    console.log(user);
     const [loading, setLoading] = useState(true);
 
     const providerLogin = (provider) => {
@@ -42,8 +43,9 @@ const AuthProvider = ({ children }) => {
             console.log('inside auth state change', currentUser);
 
             if(currentUser === null || currentUser.emailVerified){
-                setUser(currentUser);
+               
             }
+            setUser(currentUser);
             setLoading(false);
         });
 
