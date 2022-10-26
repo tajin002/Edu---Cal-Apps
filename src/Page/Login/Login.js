@@ -1,7 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthContext/AuthContext';
 
 const Login = () => {
+
+    const [error, setError] = useState('');
+    const { signIn, setLoading } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
 
     const handleLogin = (e) =>{
 
@@ -11,6 +20,28 @@ const Login = () => {
         const email = form.email.value;
         const password  = form.password.value;
         console.log(email , password);
+
+
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+                setError('');
+                if(user.emailVerified){
+                    navigate(from, {replace: true});
+                }
+                else{
+                    toast.error('Your email is not verified. Please verify your email address.')
+                }
+            })
+            .catch(error => {
+                console.error(error)
+                setError(error.message);
+            })
+            .finally(() => {
+                setLoading(false);
+            })
     }
 
     return (
@@ -28,8 +59,8 @@ const Login = () => {
                     <h1 className="text-2xl font-bold text-center">Login</h1>
                     <form onSubmit={handleLogin} noValidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
                         <div className="space-y-1 text-sm">
-                            <label htmlFor="username" className="block dark:text-gray-400">Username</label>
-                            <input type="text" name="username" id="username" placeholder="Username" className="w-full px-4 py-3 rounded-md dark:border-white dark:bg-gray-900 text-black focus:dark:border-violet-400" />
+                            <label htmlFor="username" className="block dark:text-gray-400">E-mail</label>
+                            <input type="email" name="email" id="email" placeholder="email" className="w-full px-4 py-3 rounded-md dark:border-white dark:bg-gray-900 text-black focus:dark:border-violet-400" />
                         </div>
 
                         <div className="space-y-1 text-sm">
@@ -40,7 +71,12 @@ const Login = () => {
                             </div>
                         </div>
                         <button className="block w-full p-3 text-center rounded-sm dark:text-gray-900 bg-violet-400">Sign in</button>
+
+                        <p className='text-red-500'>{error}</p>
                     </form>
+
+
+                    {/* social login option */}
                     <div className="flex items-center pt-4 space-x-1">
                         <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
                         <p className="px-3 text-sm text-gray-400">Login with social accounts</p>
