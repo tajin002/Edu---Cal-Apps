@@ -1,9 +1,9 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Topic = () => {
   const itemData = useLoaderData();
-  const { img, name, detail } = itemData;
+  const { img, name, detail, id } = itemData;
   return (
     <div>
       <section className="p-6 bg-orange-800 text-gray-100">
@@ -19,12 +19,14 @@ const Topic = () => {
               </p>
             </div>
 
-            <button
+           <Link to={`/checkOut/${id}`}>
+           <button
               type="button"
               className="w-full py-2 font-semibold rounded bg-teal-400 text-gray-900"
             >
               Get Premium Access
             </button>
+           </Link>
           </div>
           <img
             src={img}

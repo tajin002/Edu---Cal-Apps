@@ -6,6 +6,8 @@ import Topic from "../Page/Topic/Topic";
 import Home from "../Page/Home/Home";
 import Login from "../Page/Login/Login";
 import Register from "../Page/Register/Register";
+import CheclOut from "../Page/CheckOut/CheckOut";
+import CheckOut from "../Page/CheckOut/CheckOut";
 
 export const router = createBrowserRouter([
     {
@@ -31,6 +33,12 @@ export const router = createBrowserRouter([
             {
                 path : '/topic/:id',
                 element : <Topic />,
+                loader : ({params})=>fetch(`http://localhost:5000/data/${params.id}`)
+            },
+
+            {
+                path : '/checkOut/:id',
+                element : <CheckOut />,
                 loader : ({params})=>fetch(`http://localhost:5000/data/${params.id}`)
             },
             
