@@ -5,7 +5,7 @@ import { FaList } from "react-icons/fa";
 const Navbar = () => {
     return (
         <div>
-            <div className="sticky navbar bg-gradient-to-r from-violet-500 to-fuchsia-300 ">
+            <div className="sticky navbar bg-gradient-to-r from-violet-500 to-fuchsia-300 shadow-2xl">
                 <div className="flex-1">
                     <Link to={'/'} className="btn btn-ghost normal-case text-3xl font-bold text-yellow-400">
                         Dev School
