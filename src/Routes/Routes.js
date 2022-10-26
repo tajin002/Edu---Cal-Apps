@@ -33,13 +33,13 @@ export const router = createBrowserRouter([
             {
                 path : '/topic/:id',
                 element : <Topic />,
-                loader : ({params})=>fetch(`http://localhost:5000/data/${params.id}`)
+                loader : ({params})=>fetch(`https://authentication-with-firebase-server-assignment.vercel.app/data/${params.id}`)
             },
 
             {
                 path : '/checkOut/:id',
                 element : <CheckOut />,
-                loader : ({params})=>fetch(`http://localhost:5000/data/${params.id}`)
+                loader : ({params})=>fetch(`https://authentication-with-firebase-server-assignment.vercel.app/data/${params.id}`)
             },
             
             {

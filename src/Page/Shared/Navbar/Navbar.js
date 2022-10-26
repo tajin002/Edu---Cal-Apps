@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaList } from "react-icons/fa";
+import logo from '../../../assets/logo2.png'
 
 const Navbar = () => {
     return (
         <div>
-            <div className="sticky navbar bg-gradient-to-r from-violet-500 to-fuchsia-300 shadow-2xl">
+            <div className="sticky navbar bg-[#B8DDE3]">
                 <div className="flex-1">
-                    <Link to={'/'} className="btn btn-ghost normal-case text-3xl font-bold text-yellow-400">
-                        Dev School
+                    <Link to={'/'} className="btn btn-ghost normal-case text-3xl font-bold">
+                        <img className='h-10' src={logo} alt="" />
+                        <span className='text-[#2B4EFF]'>edu</span>cal
                     </Link>
                 </div>
                 <div className=" flex-none gap-2">

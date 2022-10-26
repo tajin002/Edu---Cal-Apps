@@ -5,7 +5,7 @@ import LeftSide from "../LeftSide/LeftSide";
 const Courses = () => {
   const [items, setItem] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/")
+    fetch("https://authentication-with-firebase-server-assignment.vercel.app/")
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, []);
