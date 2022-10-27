@@ -7,7 +7,6 @@ import { AuthContext } from '../../Context/AuthContext/AuthContext';
 const Register = () => {
 
     const [error, setError] = useState('');
-    const [accepted, setAccepted] = useState(false);
     const { createUser, updateUserProfile, verifyEmail } = useContext(AuthContext);
     // console.log(createUser);
 

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const LeftSide = ({items}) => {
 
   return (
-    <div className="mt-24 ml-10">
+    <div className="lg:mt-24 lg:ml-10">
       <aside className="w-full p-6 py-24 sm:w-60 bg-gray-900 text-gray-100 rounded">
         <nav className="space-y-8 text-sm">
           <div className="space-y-2">

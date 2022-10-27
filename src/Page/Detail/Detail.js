@@ -6,7 +6,7 @@ const Detail = ({ item }) => {
 
   return (
     <div>
-      <div>
+      <div className="lg:ml-0 sm:ml-44">
         <div className="card card-compact w-96 h-96 bg-base-100 shadow-xl">
           <figure>
             <img className="h-48" src={img} alt="Shoes" />
