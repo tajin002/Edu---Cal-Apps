@@ -66,6 +66,7 @@ const Navbar = () => {
                 <Link to={"/profile"}>
                   {user?.photoURL ? (
                     <img
+                    title={user.displayName}
                       className="h-8 mr-10 mt-3 rounded-full"
                       src={user?.photoURL}
                       alt=""
@@ -114,33 +115,17 @@ const Navbar = () => {
                 )}
               </>
 
-              {/* <Link to={"/profile"}>
+              <Link to={"/profile"}>
 
                 {
                   user?.photoURL ? 
-                  <img className=" h-8 mr-10 mt-3 rounded-full" src={user?.photoURL} alt="" 
+                  <img title={user.displayName} className=" h-8 mr-10 mt-3 rounded-full" src={user?.photoURL} alt="" 
                   
                   />
                   :
                   <FaUser className="mr-10 mt-3" />
                 }
-                </Link> */}
-
-              <div className="tooltip" data-tip="hello">
-                {/* <button className="btn"> */}
-                  <Link to={"/profile"}>
-                    {user?.photoURL ? (
-                      <img
-                        className=" h-8 mr-10 mt-3 rounded-full"
-                        src={user?.photoURL}
-                        alt=""
-                      />
-                    ) : (
-                      <FaUser className="mr-10 mt-3" />
-                    )}
-                  </Link>
-                {/* </button> */}
-              </div>
+                </Link>
             </ul>
           </div>
         </div>

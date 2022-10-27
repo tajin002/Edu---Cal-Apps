@@ -15,7 +15,7 @@ const LeftSide = ({items}) => {
             
             {
                 items.map(item=>
-                <p key={item.id}>
+                <p className="border-2 p-4 hover:bg-green-400 hover:text-black" key={item.id}>
                     <Link to={`/topic/${item.id}`}>{item.name}</Link>
                 </p>)
             }

@@ -2,18 +2,17 @@ import React, { useRef } from "react";
 import toast from "react-hot-toast";
 import { Link, useLoaderData } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
-import { FaChessQueen } from "react-icons/fa";
-
+import { FaChessQueen, FaCloudDownloadAlt } from "react-icons/fa";
 
 const Topic = () => {
   const itemData = useLoaderData();
   const componentRef = useRef();
   const handlePrint = useReactToPrint({
-    content : ()=> componentRef.current,
-    documentTitle : 'course-details',
-    onAfterPrint: ()=> toast.success('Successfully toasted!')
-  })
-  const { img, name, detail, id} = itemData;
+    content: () => componentRef.current,
+    documentTitle: "course-details",
+    onAfterPrint: () => toast.success("Successfully toasted!"),
+  });
+  const { img, name, detail, id } = itemData;
   return (
     <div>
       <section ref={componentRef} className="p-6 bg-amber-400 text-gray-100">
@@ -34,15 +33,22 @@ const Topic = () => {
                 type="button"
                 className="w-full font-semibold rounded bg-blue-400 text-white"
               >
-               <div className="flex items-center p-4">
-               <FaChessQueen className="ml-36 mr-2 text-yellow-300"/>
-               Get Premium Access
-                </div> 
+                <div className="flex items-center p-4">
+                  <FaChessQueen className="ml-36 mr-2 text-yellow-300" />
+                  Get Premium Access
+                </div>
               </button>
             </Link>
             <button
-            className="w-full py-2 mt-2 font-semibold rounded bg-red-500 text-white" 
-            onClick={handlePrint}>DownLoad PDF</button>
+              className="w-full py-2 mt-2 font-semibold rounded bg-red-500 text-white"
+              onClick={handlePrint}
+            >
+             <div className="flex items-center p-2">
+             <FaCloudDownloadAlt className="ml-36 mr-2"/> 
+             DownLoad PDF
+             </div>
+
+            </button>
           </div>
           <img
             src={img}
@@ -50,8 +56,7 @@ const Topic = () => {
             className="mt-8 object-cover w-full rounded-md xl:col-span-3 dark:bg-gray-500"
           />
         </div>
-        <div>
-        </div>
+        <div></div>
       </section>
     </div>
   );
