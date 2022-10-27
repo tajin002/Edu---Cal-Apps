@@ -17,9 +17,10 @@ const Courses = () => {
       </div>
 
       <div className="col-span-4">
+        <h1 className="text-4xl font-semibold text-center mt-10">Explore Our Premium Courses</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-24 mb-24">
           {items?.map((item) => (
-            <Detail item={item}></Detail>
+            <Detail item={item} key={item.id}></Detail>
           ))}
         </div>
       </div>

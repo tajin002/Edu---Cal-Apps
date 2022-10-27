@@ -3,19 +3,17 @@ import { Link, NavLink } from "react-router-dom";
 import { FaList, FaUser } from "react-icons/fa";
 import logo from "../../../assets/logo2.png";
 import { AuthContext } from "../../../Context/AuthContext/AuthContext";
-import {  } from "react-icons/fa";
+import {} from "react-icons/fa";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
 
-    const { user, logOut } = useContext(AuthContext);
-    console.log(user);
-
-
-    const handleLogOut = () => {
-        logOut()
-            .then(() => { })
-            .catch(error => console.error(error))
-    }
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
 
   return (
     <div>
@@ -48,28 +46,34 @@ const Navbar = () => {
                 <NavLink to={"/faq"}>Faq</NavLink>
               </li>
               <>
-                {
-                    user?.uid ?
-                   <>
-                    <Link className="mt-3 mr-10" onClick={handleLogOut}>Log out</Link>
-                   </>
-                   :
-                   <>
-                     <NavLink to={"/login"} className = "mt-3 mr-10">Login</NavLink>
-                     <NavLink to={"/register"} className = "mt-3 mr-10">Register</NavLink>
-                   </>
-                }
+                {user?.uid ? (
+                  <>
+                    <Link className="mt-3 mr-10" onClick={handleLogOut}>
+                      Log out
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <NavLink to={"/login"} className="mt-3 mr-10">
+                      Login
+                    </NavLink>
+                    <NavLink to={"/register"} className="mt-3 mr-10">
+                      Register
+                    </NavLink>
+                  </>
+                )}
 
                 <Link to={"/profile"}>
-
-                {
-                  user?.photoURL ? 
-                  <img className="h-8 mr-10 mt-3 rounded-full" src={user?.photoURL} alt="" />
-                  :
-                  <FaUser className="mr-10 mt-3" />
-                }
+                  {user?.photoURL ? (
+                    <img
+                      className="h-8 mr-10 mt-3 rounded-full"
+                      src={user?.photoURL}
+                      alt=""
+                    />
+                  ) : (
+                    <FaUser className="mr-10 mt-3" />
+                  )}
                 </Link>
-
               </>
             </ul>
           </div>
@@ -97,37 +101,51 @@ const Navbar = () => {
               </li>
 
               <>
-                {
-                    user?.uid ?
-                   <>
-                     <span>{user?.email}</span>
+                {user?.uid ? (
+                  <>
+                    <span>{user?.email}</span>
                     <Link className="btn">Log out</Link>
-                   </>
-                   :
-                   <>
-                     <NavLink to={"/login"}>Login</NavLink>
-                     <NavLink to={"/register"}>Register</NavLink>
-                   </>
-                }
+                  </>
+                ) : (
+                  <>
+                    <NavLink to={"/login"}>Login</NavLink>
+                    <NavLink to={"/register"}>Register</NavLink>
+                  </>
+                )}
               </>
 
-              <Link to={"/profile"}>
+              {/* <Link to={"/profile"}>
 
                 {
                   user?.photoURL ? 
                   <img className=" h-8 mr-10 mt-3 rounded-full" src={user?.photoURL} alt="" 
+                  
                   />
                   :
                   <FaUser className="mr-10 mt-3" />
                 }
-                </Link>
-              
+                </Link> */}
 
+              <div className="tooltip" data-tip="hello">
+                {/* <button className="btn"> */}
+                  <Link to={"/profile"}>
+                    {user?.photoURL ? (
+                      <img
+                        className=" h-8 mr-10 mt-3 rounded-full"
+                        src={user?.photoURL}
+                        alt=""
+                      />
+                    ) : (
+                      <FaUser className="mr-10 mt-3" />
+                    )}
+                  </Link>
+                {/* </button> */}
+              </div>
             </ul>
           </div>
         </div>
         <label
-          for="Toggle1"
+          htmlFor="Toggle1"
           className="inline-flex items-center space-x-4 cursor-pointer text-blue-700"
         >
           <span>Light</span>
@@ -138,7 +156,6 @@ const Navbar = () => {
           </span>
           <span>Dark</span>
         </label>
-
       </div>
     </div>
   );
