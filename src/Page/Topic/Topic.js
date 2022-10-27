@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const Topic = () => {
   const itemData = useLoaderData();
-  const { img, name, detail, id } = itemData;
+  const { img, name, detail, id} = itemData;
   return (
     <div>
       <section className="p-6 bg-orange-800 text-gray-100">
@@ -31,7 +31,7 @@ const Topic = () => {
           <img
             src={img}
             alt=""
-            className="object-cover w-full rounded-md xl:col-span-3 dark:bg-gray-500"
+            className="mt-8 object-cover w-full rounded-md xl:col-span-3 dark:bg-gray-500"
           />
         </div>
       </section>
