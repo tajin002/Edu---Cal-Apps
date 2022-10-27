@@ -104,7 +104,7 @@ const Navbar = () => {
               <>
                 {user?.uid ? (
                   <>
-                    <span>{user?.email}</span>
+                    
                     <Link className="btn">Log out</Link>
                   </>
                 ) : (

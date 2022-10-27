@@ -15,8 +15,8 @@ const Topic = () => {
   const { img, name, detail, id } = itemData;
   return (
     <div>
-      <section ref={componentRef} className="p-6 bg-amber-400 text-gray-100">
-        <div className="container grid gap-6 mx-auto text-center lg:grid-cols-2 xl:grid-cols-5">
+      <section ref={componentRef} className=" bg-amber-400 text-gray-100">
+        <div className="container p-6 grid grid-cols-1 gap-5 mx-auto text-center lg:grid-cols-2 xl:grid-cols-5">
           <div className="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 dark:bg-gray-900">
             <div>
               <p className="text-6xl text-indigo-500 font-bold mb-16">{name}</p>
@@ -34,7 +34,7 @@ const Topic = () => {
                 className="w-full font-semibold rounded bg-blue-400 text-white"
               >
                 <div className="flex items-center p-4">
-                  <FaChessQueen className="ml-36 mr-2 text-yellow-300" />
+                  <FaChessQueen className="md:ml-36 mr-2 text-yellow-300" />
                   Get Premium Access
                 </div>
               </button>
@@ -43,8 +43,8 @@ const Topic = () => {
               className="w-full py-2 mt-2 font-semibold rounded bg-red-500 text-white"
               onClick={handlePrint}
             >
-             <div className="flex items-center p-2">
-             <FaCloudDownloadAlt className="ml-36 mr-2"/> 
+            <div className="flex items-center p-2">
+             <FaCloudDownloadAlt className="md:ml-36 mr-2"/> 
              DownLoad PDF
              </div>
 
