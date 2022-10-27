@@ -11,11 +11,13 @@ import CheckOut from "../Page/CheckOut/CheckOut";
 import Faq from "../Page/Faq/Faq";
 import PrivateRoute from "../Page/PrivateRouter/PrivateRouter";
 import Profile from "../Page/Profile/Profile";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
     {
         path: '/',
         element : <Main />,
+        errorElement : <ErrorPage />,
         children : [
 
             {
