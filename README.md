@@ -1,18 +1,18 @@
-# Getting Started with Create React App
-
-This project was tailwind css with [Create React App](https://github.com/facebook/create-react-app).
-
-* Educal Website Link : https://fluffy-horse-4c3918.netlify.app/
-* Website Link deploy from Netlify
-* Here uses Tailwind css and Mumba UI
-* Uses also React To PDF page
-* Uses error element pages
-* Node.js library express.js uses 
-* Deploy server link which deploy in Vercel
-* Sever Side Link : https://authentication-with-firebase-server-assignment.vercel.app/
-* Uses Firebase Authentication system
-
-
-
-It's my first backend website which created successfully. Responsive and other instruction doing completely.
-I'm very exited to see my first backend website.
+# Visit Live Website: <a href = "https://endearing-zuccutto-bb2993.netlify.app/">Educal</a>
+## Visit Backend Repo: <a href = "https://github.com/tajin002/Edu-Cal-Server">Educal-server</a>
+#### Frontend
+1. React.js
+2. Tailwind
+3. Daisy Ui
+Firebase Authentication
+#### Backend
+1. Node.js
+2. Express
+3. Vercel
+#### Available Features
+1. Login [email, password or google]
+2. Registration
+3. Courses
+4. Subscription
+5. Blog
+6. FAQ
